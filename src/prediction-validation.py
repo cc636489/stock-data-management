@@ -72,6 +72,75 @@ class PredictValidate:
 
         return self
 
+    def _get_average_error_inside_window(self, window_start_index, window_end_index):
+        """
+        This is an object internal function, in order to calculate average error of all stocks in any given window
+        :param window_start_index:
+        :param window_end_index:
+        :return:
+        """
+
+        temp_sum = 0.0
+        temp_num = 0
+        for value in self.data_structure.itervalues():
+            for i in range(window_start_index, window_end_index + 1):
+                if value[0][i] is not None and value[1][i] is not None:
+                    temp_sum += abs(value[0][i] - value[1][i])
+                    temp_num += 1
+        average_error = temp_sum / temp_num
+
+        return average_error
+
+    @staticmethod
+    def _round_up(value, decimal_digits=2):
+        """
+        This is a function to round up floating point number based on ROUND_HALF criteria.
+        For instance:
+        round_up(1.995, 2) = 2.00
+        round_up(1.994, 2) = 1.99
+
+        :param value: floating point number
+        :param decimal_digits: target round off decimal.
+        :return: rounded off numbers in string
+        """
+
+        result = str(value)
+
+        # if entered value is '', return '' directly.
+        if result != '':
+
+            zero_count = decimal_digits  # number of zeros need to be added into value.
+            decimal_index = result.find('.')  # index for the decimal dot '.'
+
+            # case 1: there is decimal in entered value.
+            if decimal_index > 0:
+
+                zero_count = len(result[decimal_index + 1:])
+
+                # case 1.1: given decimal digits in the value > required decimal digits
+                if zero_count > decimal_digits:
+                    # when the last effective digit is greater than 4, add 1 to the previous digit.
+                    if int(result[decimal_index + decimal_digits + 1]) > 4:
+                        result = str(value + pow(10, decimal_digits * -1))
+                    # otherwise, just ignore the rest part of decimal digits.
+                    decimal_index = result.find('.')
+                    result = result[:decimal_index + decimal_digits + 1]
+                    zero_count = 0
+
+                # case 1.2: given decimal digits in the value <= required decimal digits
+                else:
+                    zero_count = decimal_digits - zero_count
+
+            # case 2: there is no decimal in entered value, take it as integer.
+            else:
+                result += '.'
+
+            # add necessary zeros into value.
+            for i in range(zero_count):
+                result += '0'
+
+        return result
+
     def read_input(self):
 
         """
@@ -117,7 +186,7 @@ class PredictValidate:
         if self.window_size >= self.num_hour:
             average_error = self._get_average_error_inside_window(0, self.num_hour - 1)
             string = str(self.start_hour) + '|' + str(self.start_hour + self.window_size - 1) + '|' + \
-                '{:.2f}'.format(average_error)+'\n'
+                self._round_up(average_error) + '\n'
             if self.DEBUG:
                 print(string)
             f_output.write(string)
@@ -128,7 +197,7 @@ class PredictValidate:
             while k + self.window_size - 1 <= self.num_hour - 1:
                 average_error = self._get_average_error_inside_window(k, k + self.window_size - 1)
                 string = str(self.start_hour + k) + '|' + str(self.start_hour + k + self.window_size - 1) + '|' + \
-                    '{:.2f}'.format(average_error) + '\n'
+                    self._round_up(average_error) + '\n'
                 if self.DEBUG:
                     print(string)
                 f_output.write(string)
@@ -138,25 +207,6 @@ class PredictValidate:
         f_output.close()
 
         return self
-
-    def _get_average_error_inside_window(self, window_start_index, window_end_index):
-        """
-        This is an object internal function, in order to calculate average error of all stocks in any given window
-        :param window_start_index:
-        :param window_end_index:
-        :return:
-        """
-
-        temp_sum = 0.0
-        temp_num = 0
-        for value in self.data_structure.itervalues():
-            for i in range(window_start_index, window_end_index + 1):
-                if value[0][i] is not None and value[1][i] is not None:
-                    temp_sum += abs(value[0][i] - value[1][i])
-                    temp_num += 1
-        average_error = temp_sum / temp_num
-
-        return average_error
 
 
 def main():
