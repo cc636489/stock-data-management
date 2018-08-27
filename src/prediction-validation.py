@@ -168,7 +168,7 @@ def main():
     input_actual = sys.argv[2]
     input_predict = sys.argv[3]
     output = sys.argv[4]
-    debug = True
+    debug = False
 
     # build an object.
     obj = PredictValidate(input_actual, input_predict, input_window, output, debug)
