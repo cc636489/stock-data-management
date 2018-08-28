@@ -183,7 +183,7 @@ class PredictValidate:
         if self.window_size >= self.num_hour:
             average_error = self._get_average_error_inside_window(0, self.num_hour - 1)
             string = str(self.start_hour) + '|' + str(self.start_hour + self.window_size - 1) + '|' + \
-                '{:.2f}'.format(average_error) + '\n'
+                str(round(average_error, 2)) + '\n'
             if self.DEBUG:
                 print(string)
             f_output.write(string)
@@ -194,7 +194,7 @@ class PredictValidate:
             while k + self.window_size - 1 <= self.num_hour - 1:
                 average_error = self._get_average_error_inside_window(k, k + self.window_size - 1)
                 string = str(self.start_hour + k) + '|' + str(self.start_hour + k + self.window_size - 1) + '|' + \
-                    '{:.2f}'.format(average_error) + '\n'
+                    str(round(average_error, 2)) + '\n'
                 if self.DEBUG:
                     print(string)
                 f_output.write(string)
