@@ -183,7 +183,7 @@ class PredictValidate:
         if self.window_size >= self.num_hour:
             average_error = self._get_average_error_inside_window(0, self.num_hour - 1)
             string = str(self.start_hour) + '|' + str(self.start_hour + self.window_size - 1) + '|' + \
-                {':.2f'}.format(average_error) + '\n'
+                '{:.2f}'.format(average_error) + '\n'
             if self.DEBUG:
                 print(string)
             f_output.write(string)
@@ -194,7 +194,7 @@ class PredictValidate:
             while k + self.window_size - 1 <= self.num_hour - 1:
                 average_error = self._get_average_error_inside_window(k, k + self.window_size - 1)
                 string = str(self.start_hour + k) + '|' + str(self.start_hour + k + self.window_size - 1) + '|' + \
-                    {':.2f'}.format(average_error) + '\n'
+                    '{:.2f}'.format(average_error) + '\n'
                 if self.DEBUG:
                     print(string)
                 f_output.write(string)
@@ -242,9 +242,9 @@ def test_single(path, test_path):
     bold = '\033[1m'
 
     if return_flag:
-        print blue + bold + "Test" + test_path[5:-1] + ": " + bold + green + "PASS"
+        print(blue + bold + "Test" + test_path[5:-1] + ": " + bold + green + "PASS")
     else:
-        print blue + bold + "Test" + test_path[5:-1] + ": " + bold + red + "FAIL"
+        print(blue + bold + "Test" + test_path[5:-1] + ": " + bold + red + "FAIL")
 
     return 1
 
