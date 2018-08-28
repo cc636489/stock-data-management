@@ -11,10 +11,8 @@ def main():
     output = sys.argv[4]
     debug = False
 
-    # build an object.
+    # build an object, read and write.
     obj = PredictValidate(input_actual, input_predict, input_window, output, debug)
-
-    # read and write.
     obj.read_input()
     obj.write_output()
 

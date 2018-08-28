@@ -19,57 +19,61 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="2" />
-          <entry key="py" value="5" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="2" />
-          <entry key="Python" value="5" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="2294" />
+          <entry key="Python Console" value="2541" />
           <entry key="dummy" value="14" />
-          <entry key="py" value="9815" />
+          <entry key="py" value="13371" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="12109" />
+          <entry key="Python" value="15912" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prediction-validation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+            <state relative-caret-position="36">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
               <folding>
-                <marker date="1535431245337" expanded="true" signature="62:63" ph="..." />
-                <marker date="1535431245337" expanded="true" signature="74:80" ph="..." />
+                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1535494560542" expanded="true" signature="62:63" ph="..." />
+                <marker date="1535494560542" expanded="true" signature="74:80" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/predic_validate_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="201" lean-forward="true" selection-start-line="201" selection-end-line="201" />
+            <state relative-caret-position="450">
+              <caret line="406" column="14" lean-forward="true" selection-start-line="406" selection-start-column="14" selection-end-line="406" selection-end-column="14" />
               <folding>
                 <element signature="e#115#1210#0" />
                 <element signature="e#1246#2479#0" />
                 <element signature="e#2575#3203#0" />
+                <element signature="e#3520#6051#0" />
                 <element signature="e#3275#5119#0" />
-                <element signature="e#5156#6378#0" />
-                <marker date="1535470452328" expanded="true" signature="8897:8902" ph="..." />
+                <element signature="e#6403#7171#0" />
+                <element signature="e#7210#8484#0" />
+                <element signature="e#8525#11880#0" />
+                <element signature="e#11903#12851#0" />
               </folding>
             </state>
           </provider>
@@ -88,8 +92,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../insight_testsuite/tests/test_4_Q/input/remove_line_from_actual.py" />
-        <option value="$PROJECT_DIR$/prediction-validation.py" />
         <option value="$PROJECT_DIR$/predic_validate_class.py" />
+        <option value="$PROJECT_DIR$/prediction-validation.py" />
       </list>
     </option>
   </component>
@@ -146,7 +150,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.remove_line_from_actual">
+  <component name="RunManager" selected="Python.predic_validate_class">
+    <configuration name="predic_validate_class" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="src" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/predic_validate_class.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="prediction-validation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="src" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -192,9 +217,11 @@
     <list>
       <item itemvalue="Python.prediction-validation" />
       <item itemvalue="Python.remove_line_from_actual" />
+      <item itemvalue="Python.predic_validate_class" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.predic_validate_class" />
         <item itemvalue="Python.remove_line_from_actual" />
         <item itemvalue="Python.prediction-validation" />
       </list>
@@ -221,12 +248,12 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Python Console" sideWeight="0.49964765" visible="true" weight="0.32409638" />
+      <window_info anchor="bottom" id="Python Console" sideWeight="0.49964765" weight="0.32409638" />
       <window_info anchor="bottom" id="Terminal" weight="0.32891566" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5003524" side_tool="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5003524" side_tool="true" weight="0.26385543" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26385543" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" weight="0.26385543" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -266,28 +293,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prediction-validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-          <folding>
-            <marker date="1535431245337" expanded="true" signature="62:63" ph="..." />
-            <marker date="1535431245337" expanded="true" signature="74:80" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/predic_validate_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="201" lean-forward="true" selection-start-line="201" selection-end-line="201" />
+        <state relative-caret-position="450">
+          <caret line="406" column="14" lean-forward="true" selection-start-line="406" selection-start-column="14" selection-end-line="406" selection-end-column="14" />
           <folding>
             <element signature="e#115#1210#0" />
             <element signature="e#1246#2479#0" />
             <element signature="e#2575#3203#0" />
+            <element signature="e#3520#6051#0" />
             <element signature="e#3275#5119#0" />
-            <element signature="e#5156#6378#0" />
-            <marker date="1535470452328" expanded="true" signature="8897:8902" ph="..." />
+            <element signature="e#6403#7171#0" />
+            <element signature="e#7210#8484#0" />
+            <element signature="e#8525#11880#0" />
+            <element signature="e#11903#12851#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prediction-validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1535494560542" expanded="true" signature="62:63" ph="..." />
+            <marker date="1535494560542" expanded="true" signature="74:80" ph="..." />
           </folding>
         </state>
       </provider>
