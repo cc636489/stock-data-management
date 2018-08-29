@@ -1,1 +1,1 @@
-This is the directory where your program would find any test input files.
+This directory is where we would expect your program to write the requested output files.

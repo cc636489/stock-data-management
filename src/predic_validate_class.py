@@ -1,18 +1,23 @@
 class PredictValidate:
+    """
+    This is a class for calculating average error between predicted and actual stock prices.
+    """
 
     def __init__(self, input_actual, input_predict, input_window, output, debug):
-
         """
-        Initializing a dictionary for saving all input data, the dict format is as follows:
+        The constructor for PredictValidate class: To initialize a dictionary for saving all input data.
 
+        Data structure Description:
         key:'stockID' ==>  value: nested_list[2][num_hour];
         nested_list[0,:] represents actual price for this stock at this hour;
         nested_list[1,:] represents predicted price for this stock at this hour.
 
+        Parameters:
         :param input_actual: full path to input file actual.txt;
         :param input_predict: full path to input file predicted.txt;
         :param input_window: full path to input file window.txt;
         :param output: full path to output file comparison.txt.
+        :param debug: bool for debug.
         """
 
         # Define data attributes.
@@ -23,21 +28,23 @@ class PredictValidate:
         self.DEBUG = debug
 
         # Define several attributes for later use.
-        self.start_hour = None
-        self.end_hour = None
-        self.num_hour = None
-        self.num_stock = None
-        self.window_size = None
+        self.start_hour = 1
+        self.end_hour = 1
+        self.num_hour = 1
+        self.num_stock = 1
+        self.window_size = 1
         self.data_structure = {}
 
         # Initialization.
         self._get_init()
 
     def _get_init(self):
-
         """
-        This is where the actual initialization happens.
-        :return: self
+        The function to initialize dictionary.
+
+        Assumption:
+            actual.txt should start with a non-empty line with first field filled with integer.
+            start_hour will read from line 0 in the file.
         """
 
         # 1st scan the actual.txt: obtain starting hour, ending hour, entire stock ID list.
@@ -46,12 +53,37 @@ class PredictValidate:
         with open(self.input_actual, 'r') as f1:
             for i, this_line in enumerate(f1):
                 temp = this_line.split('|')
+
+                # check if there will be IndexError.
+                if len(temp) < 2:
+                    continue
+
+                # check if temp[1] is empty. empty string will not fill into stock id.
+                if not temp[1].strip():
+                    continue
+
+                # check if the time hour is in a valid format.
+                try:
+                    int(temp[0])
+                except ValueError:
+                    continue
                 temp[0] = int(temp[0])  # for hour.
+
+                # check if the stock id is in a valid format.
+                try:
+                    str(temp[1])
+                except ValueError:
+                    continue
                 temp[1] = str(temp[1])  # for stock ID.
+
+                # read in start_hour.
                 if i == 0:
                     self.start_hour = temp[0]
+
+                # read in all stock id.
                 if temp[1] not in stock_id:
                     stock_id.append(temp[1])
+
         self.end_hour = temp[0]
         self.num_hour = self.end_hour - self.start_hour + 1
         self.num_stock = len(stock_id)
@@ -72,14 +104,18 @@ class PredictValidate:
     def _get_average_error_inside_window(self, window_start_index, window_end_index):
         """
         This is an object internal function, in order to calculate average error of all stocks in any given window
-        :param window_start_index:
-        :param window_end_index:
-        :return:
+
+        Parameters:
+        :param window_start_index: current start index in the nested list.
+        :param window_end_index: current start index in the nested list.
+
+        Returns:
+        :return average_error: average error in this window.
         """
 
         temp_sum = 0.0
         temp_num = 0
-        for value in self.data_structure.itervalues():
+        for value in self.data_structure.values():
             for i in range(window_start_index, window_end_index + 1):
                 if value[0][i] is not None and value[1][i] is not None:
                     temp_sum += abs(value[0][i] - value[1][i])
@@ -95,10 +131,8 @@ class PredictValidate:
         return average_error
 
     def _read_single_stock_price_file(self, filename):
-        """
 
-        :return:
-        """
+        """ The function to read in a single stock price input file. """
 
         # check which file to read. Can only use this function for two different kinds of file.
         if "actual" in filename:
@@ -120,7 +154,22 @@ class PredictValidate:
                           'WILL ignore this whole line.' % (i + 1))
                     continue
                 else:
-                    hour = int(temp[0])  # for hour. It safely is an integer.
+                    # check if the time hour is in a valid format.
+                    try:
+                        int(temp[0])
+                    except ValueError:
+                        print(file_name + ' line %d: read in invalid time hour. '
+                                          'WILL ignore this whole line.' % (i + 1))
+                        continue
+                    hour = int(temp[0])  # for hour.
+
+                    # check if the stock id is in a valid format.
+                    try:
+                        str(temp[1])
+                    except ValueError:
+                        print(file_name + ' line %d: read in invalid stock id. '
+                                          'WILL ignore this whole line.' % (i + 1))
+                        continue
                     key = str(temp[1])  # for stock ID.
 
                     # check if the stock price is in a valid format.
@@ -130,7 +179,6 @@ class PredictValidate:
                         print(file_name + ' line %d: read in invalid stock price. '
                               'WILL ignore this whole line.' % (i + 1))
                         continue
-
                     value = float(temp[2])  # for stock price.
 
                     # check if the read in file has new key type.
@@ -160,13 +208,17 @@ class PredictValidate:
     @staticmethod
     def _round_up(value, decimal_digits=2):
         """
-        This is a function to round up floating point number based on ROUND_HALF criteria.
+        The function to round up floating point number based on ROUND_HALF criteria.
+
         For instance:
         round_up(1.995, 2) = 2.00
         round_up(1.994, 2) = 1.99
 
+        Parameters:
         :param value: floating point number
         :param decimal_digits: target round off decimal.
+
+        Returns:
         :return: rounded off numbers in string
         """
 
@@ -209,10 +261,7 @@ class PredictValidate:
 
     def read_input(self):
 
-        """
-        This is where the actual feeding-in-stock-price happens.
-        :return: self
-        """
+        """ This is where the actual feeding-in-stock-price happens. """
 
         # 2nd scan the actual.txt: read in actual stock price to nested_list[0][:]
         self._read_single_stock_price_file(self.input_actual)
@@ -224,10 +273,7 @@ class PredictValidate:
 
     def write_output(self):
 
-        """
-        This is where we calculate and output the comparison results.
-        :return: self
-        """
+        """ This is where we calculate and output the comparison results. """
 
         # open file to write.
         f_output = open(self.output, 'w')
@@ -285,12 +331,9 @@ class PredictValidate:
 
 
 def test_single(path, test_path):
-    """
 
-    :param path:
-    :param test_path:
-    :return:
-    """
+    """ The function to run a single test case. """
+
     # define input output file path.
     input_window = path + test_path + 'input/window.txt'
     input_actual = path + test_path + 'input/actual.txt'
@@ -317,8 +360,6 @@ def test_single(path, test_path):
 
     if model != truth:
         if len(model) != len(truth):
-            print len(model)
-            print len(truth)
             return_flag = False
             print(red + bold + 'could not match length of both files in comparison.')
         else:
@@ -328,12 +369,12 @@ def test_single(path, test_path):
                     temp_truth = truth[k].split('|')
                     # try to convert the average error type to float, consider NA case.
                     try:
-                        temp_model[2] = float(temp_model[2])
+                        float(temp_model[2])
                         temp_model_float_type = True
                     except ValueError:
                         temp_model_float_type = False
                     try:
-                        temp_truth[2] = float(temp_truth[2])
+                        float(temp_truth[2])
                         temp_truth_float_type = True
                     except ValueError:
                         temp_truth_float_type = False
@@ -367,10 +408,9 @@ def test_single(path, test_path):
 
 
 def test_all():
-    """
 
-    :return:
-    """
+    """ The function to run all test cases. """
+
     blue = '\033[94m'
     bold = '\033[1m'
     path = '../insight_testsuite/tests/'
