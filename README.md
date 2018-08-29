@@ -34,12 +34,12 @@ My main idea was to use `unordered map` (Dictionary in Python Implementation) to
 
 ## Exectuion
 
-To execute the code use the _run.sh_ script.
+To execute the code use the `run.sh` script.
 
 	./run.sh
 
 
-Or you can simply go to ./src/ and execute the _prediction-validation.py_ script with 4 command line options.
+Or you can simply go to ./src/ and execute the `prediction-validation.py` script with 4 command line options.
 
 	cd ./src/
 	python prediction-validation.py <path to window.txt> <path to actual.txt> <path to predicted.txt> <path to comparison.txt>
