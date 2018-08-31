@@ -4,11 +4,28 @@ A Python2.7 solution to the Insight Data Engineering coding challenge (Aug 2018)
 
 ## Description
 
-My main idea was to use `unordered map` (Dictionary in Python Implementation) to store actual and predicted stock prices. I used stock id as keys and a 2D nested list as values, in which it consists of stock price time series from actual.txt and predicted.txt. 
+My main idea was to use `unordered map` (Dictionary in Python Implementation) to store actual and predicted stock prices. 
 
-## Summary
+### data structure:
+	key: stock id
+	value: 
+		double-ended queue[0] for storing [hour, price] pair in actual.txt
+		double-ended queue[1] for storing [hour, price] pair in predicted.txt
 
-The code can process the valid sample file containing 99 stocks in 1440 hours in around one second on a Macbook Air with 8GB of RAM, 1.8 GHz Intel Core i5. It could process ugly dataset, like missing one or more field of infomation in a line, input typo of stock prices, one empty line in the middle of the file, window size is larger than the actual hours, etc.
+### control flow chart:
+	
+* read in one window size of data from actual.txt, keep track of the breakline information, save into gap_line
+* read in one window size of data from predicted.txt, keep track of the breakline information, save into gap_line
+* calculate all the possible output inside this current window.(edge case: there is large hour gap inside actual.txt)
+* write the calculated average error into output file.
+* update window start/end information.
+* pop out all not-in-the-window data.
+* append gap_line information last. 
+
+### Complexity:
+
+Given that n represents number of hours,  m represents number of stocks, k represents the window size:
+time complexity is `O(nm)`, space complexity is `O(km)`.
 
 ### Feature:
 
@@ -17,13 +34,10 @@ The code can process the valid sample file containing 99 stocks in 1440 hours in
 * stock ids in each hour presented in actual.txt and predicted.txt can have different order.
 * both actual and predicted data can have missing hours.
 
-### Complexity:
-
-Given that n represents number of hours and m represents number of stocks, time complexity is `O(nm)`, space complexity is `O(nm)`.
-
 ## Dependencies
 
-- sys (standard Python module to obtain command line argument.)
+- import sys (standard Python module to obtain command line argument.)
+- from collections import deque (for high performance Python data structure.)
 - Python 2.7
 
 ## Exectuion
@@ -33,17 +47,16 @@ To execute the code use the `run.sh` script.
 	./run.sh
 
 
-Or you can simply go to ./src/ and execute the `prediction-validation.py` script with 4 command line options.
-
-	cd ./src/
-	python prediction-validation.py <path to window.txt> <path to actual.txt> <path to predicted.txt> <path to comparison.txt>
-
-
 ## Tests
 
-Additional tests have been added in the _insight\_testsuite/tests_ folder. Those can be run by executing the _run\_tests.sh_ script.  
+6 Additional tests have been added in the _insight\_testsuite/tests_ folder. Those can be run by executing the _run\_tests.sh_ script.  
 
 	cd ./insight_testsuite/
 	bash run_tests.sh
 
+
+Or you can go to ./src/, run `test_all.py`
+
+	cd ./src/
+	python test_all.py
 

@@ -264,8 +264,8 @@ class PredictValidate:
 
             # calculate all possible window-size average error
             for key in self.data_structure.keys():
-                temp_1 = list(self.data_structure[key][0])
-                temp_2 = list(self.data_structure[key][1])
+                temp_1 = self.data_structure[key][0]
+                temp_2 = self.data_structure[key][1]
                 # empty deque, go to next stock.
                 if len(temp_1) == 0 or len(temp_2) == 0:
                     continue

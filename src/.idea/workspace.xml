@@ -4,8 +4,7 @@
     <list default="true" id="8fffdc12-a13f-4248-b760-80e63bc11f78" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predic_validate_class.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prediction-validation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/predict_validate_class_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/predict_validate_class_2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +25,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="2" />
-          <entry key="py" value="27" />
+          <entry key="py" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="2" />
-          <entry key="Python" value="27" />
+          <entry key="Python" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -56,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/prediction-validation-2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -64,29 +63,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/predict_validate_class_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="310" column="45" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
+            <state relative-caret-position="430">
+              <caret line="267" column="25" lean-forward="true" selection-start-line="267" selection-start-column="25" selection-end-line="267" selection-end-column="25" />
               <folding>
                 <element signature="e#255#1774#0" />
                 <element signature="e#1834#2948#0" />
-                <element signature="e#2972#6597#0" />
-                <element signature="e#8672#9918#0" />
-                <element signature="e#9073#10127#0" />
-                <element signature="e#11170#11970#0" />
-                <marker date="1535728062442" expanded="true" signature="6727:12047" ph="..." />
+                <element signature="e#2984#6609#0" />
+                <element signature="e#6675#8702#0" />
+                <element signature="e#11145#12041#0" />
+                <element signature="e#12077#14345#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_all.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="119" column="28" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
+            <state relative-caret-position="1168">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
@@ -112,9 +110,9 @@
         <option value="$PROJECT_DIR$/prediction-validation-3.py" />
         <option value="$PROJECT_DIR$/try_file.py" />
         <option value="$PROJECT_DIR$/predict_validate_class_3.py" />
-        <option value="$PROJECT_DIR$/predict_validate_class_2.py" />
         <option value="$PROJECT_DIR$/test_all.py" />
         <option value="$PROJECT_DIR$/prediction-validation-2.py" />
+        <option value="$PROJECT_DIR$/predict_validate_class_2.py" />
       </list>
     </option>
   </component>
@@ -312,12 +310,12 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16842847" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16842847" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" weight="0.26385543" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964765" visible="true" weight="0.26385543" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989429" weight="0.35301206" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -432,33 +430,32 @@
     <entry file="file://$PROJECT_DIR$/prediction-validation-2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/predict_validate_class_2.py">
+    <entry file="file://$PROJECT_DIR$/test_all.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="310" column="45" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
-          <folding>
-            <element signature="e#255#1774#0" />
-            <element signature="e#1834#2948#0" />
-            <element signature="e#2972#6597#0" />
-            <element signature="e#8672#9918#0" />
-            <element signature="e#9073#10127#0" />
-            <element signature="e#11170#11970#0" />
-            <marker date="1535728062442" expanded="true" signature="6727:12047" ph="..." />
-          </folding>
+        <state relative-caret-position="1168">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_all.py">
+    <entry file="file://$PROJECT_DIR$/predict_validate_class_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="119" column="28" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
+        <state relative-caret-position="430">
+          <caret line="267" column="25" lean-forward="true" selection-start-line="267" selection-start-column="25" selection-end-line="267" selection-end-column="25" />
+          <folding>
+            <element signature="e#255#1774#0" />
+            <element signature="e#1834#2948#0" />
+            <element signature="e#2984#6609#0" />
+            <element signature="e#6675#8702#0" />
+            <element signature="e#11145#12041#0" />
+            <element signature="e#12077#14345#0" />
+          </folding>
         </state>
       </provider>
     </entry>
