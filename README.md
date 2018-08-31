@@ -2,6 +2,10 @@
 
 A Python2.7 solution to the Insight Data Engineering coding challenge (Aug 2018).  The challenge was to calculate average error of stock price for all matched pairs in two files over a user-defined time window.
 
+## Description
+
+My main idea was to use `unordered map` (Dictionary in Python Implementation) to store actual and predicted stock prices. I used stock id as keys and a 2D nested list as values, in which it consists of stock price time series from actual.txt and predicted.txt. 
+
 ## Summary
 
 The code can process the valid sample file containing 99 stocks in 1440 hours in around one second on a Macbook Air with 8GB of RAM, 1.8 GHz Intel Core i5. It could process ugly dataset, like missing one or more field of infomation in a line, input typo of stock prices, one empty line in the middle of the file, window size is larger than the actual hours, etc. 
@@ -16,10 +20,6 @@ The code can process the valid sample file containing 99 stocks in 1440 hours in
 ### Complexity:
 
 Given that n represents number of hours and m represents number of stocks, time complexity is `O(nm)`, space complexity is `O(nm)`.
-
-## Description
-
-My main idea was to use `unordered map` (Dictionary in Python Implementation) to store actual and predicted stock prices. I used stock id as keys and a 2D nested list as values, in which it consists of stock price time series from actual.txt and predicted.txt. 
 
 ## Dependencies
 
