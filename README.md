@@ -4,7 +4,7 @@ A Python2.7 solution to the Insight Data Engineering coding challenge (Aug 2018)
 
 ## Summary
 
-The code can process the valid sample file containing 99 stocks in 1440 hours in around one second on a Macbook Air with 8GB of RAM, 1.8 GHz Intel Core i5. It could process ugly dataset, like missing one or more field of infomation in a line, input typo of stock prices, one empty line in the middle of the file, window size is larger than the actual hours, etc. 
+The code can process the valid sample file containing 99 stocks in 1440 hours in around one second on a Macbook Air with 8GB of RAM, 1.8 GHz Intel Core i5. It could process ugly dataset, like missing one or more field of infomation in a line, input typo of stock prices, one empty line in the middle of the file, window size is larger than the actual hours, etc.
 
 ### Feature:
 

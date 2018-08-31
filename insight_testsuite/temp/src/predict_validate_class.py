@@ -411,6 +411,8 @@ def test_all():
 
     """ The function to run all test cases. """
 
+    from datetime import datetime
+
     blue = '\033[94m'
     bold = '\033[1m'
     path = '../insight_testsuite/tests/'
@@ -418,27 +420,37 @@ def test_all():
     # run test_1, have round off error. add tolerance.
     test_path = 'test_1/'
     print(blue + bold + test_path[:-1] + ' is a given basic test case.')
+    start = datetime.now()
     test_single(path, test_path)
+    print datetime.now()-start, " seconds"
 
     # run test_2
     test_path = 'test_2/'
     print(blue + bold + test_path[:-1] + ' is a shorter basic test case.')
+    start = datetime.now()
     test_single(path, test_path)
+    print datetime.now() - start, " seconds"
 
     # run test_3
     test_path = 'test_3/'
     print(blue + bold + test_path[:-1] + ' is a given demo case with variations on window size.')
+    start = datetime.now()
     test_single(path, test_path)
+    print datetime.now() - start, " seconds"
 
     # run test_4
     test_path = 'test_4/'
     print(blue + bold + test_path[:-1] + ' is a given demo test case with ugly input data.')
+    start = datetime.now()
     test_single(path, test_path)
+    print datetime.now() - start, " seconds"
 
     # run test_5
     test_path = 'test_5/'
     print(blue + bold + test_path[:-1] + ' is a given demo test case.')
+    start = datetime.now()
     test_single(path, test_path)
+    print datetime.now() - start, " seconds"
 
     return 0
 

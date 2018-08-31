@@ -1,5 +1,5 @@
 import sys
-from predict_validate_class import PredictValidate
+from predict_validate_class_3 import PredictValidate
 
 
 def main():
@@ -13,8 +13,7 @@ def main():
 
     # build an object, read and write.
     obj = PredictValidate(input_actual, input_predict, input_window, output, debug)
-    obj.read_input()
-    obj.write_output()
+    obj.read_write()
 
     return 0
 
