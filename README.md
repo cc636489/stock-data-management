@@ -17,12 +17,6 @@ The code can process the valid sample file containing 99 stocks in 1440 hours in
 
 Given that n represents number of hours and m represents number of stocks, time complexity is `O(nm)`, space complexity is `O(nm)`.
 
-### Assumption:
-
-* There are much less missing hours in both actual.txt and predicted.txt, comparing to the entire hour range.
-* First line in actual.txt and predicted.txt is non empty, with the first field read as integer.
-* All stock ids and stock prices in actual.txt and predicted.txt, can be memorized by a single machine.  
-
 ## Description
 
 My main idea was to use `unordered map` (Dictionary in Python Implementation) to store actual and predicted stock prices. I used stock id as keys and a 2D nested list as values, in which it consists of stock price time series from actual.txt and predicted.txt. 
