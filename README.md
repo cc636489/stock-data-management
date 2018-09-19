@@ -1,4 +1,4 @@
-# An objected-oriented programming solution to compute average error between actual and predicted stock prices. 
+# An object-oriented programming solution to compute average error between actual and predicted stock prices. 
 
 Before deploying a machine learning model for predicting real-time stock market data, it's necessary to know how accurate our predictions are over time by comparing our predictions with newly arriving real-time stock prices. This program was designed on the purpose of calculating average error of stock price in data streams.
 
