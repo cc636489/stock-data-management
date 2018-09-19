@@ -1,10 +1,10 @@
-# Insight Data Engineering Coding Challenge
+# An objected-oriented programming solution to compute average error between actual and predicted stock prices. 
 
-A Python2.7 solution to the Insight Data Engineering coding challenge (Aug 2018).  The challenge was to calculate average error of stock price for all matched pairs in two files over a user-defined time window.
+Before deploying a machine learning model for predicting real-time stock market data, it's necessary to know how accurate our predictions are over time by comparing our predictions with newly arriving real-time stock prices. This program was designed on the purpose of calculating average error of stock price in data streams.
 
 ## Description
 
-My main idea was to use `unordered map` (Dictionary in Python Implementation) to store actual and predicted stock prices. 
+The idea was to use `unordered map` (Dictionary in Python Implementation) to store actual and predicted stock prices. 
 
 ### data structure:
 	key: stock id
